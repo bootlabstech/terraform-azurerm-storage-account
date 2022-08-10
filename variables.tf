@@ -16,10 +16,6 @@ variable "file_storage_account_replication_type" {
 variable "container_set" {
   description = "List of containers to create and their access levels."
   type        = list(object({ name = string, access_type = string }))
-  default = [{
-    name        = "default"
-    access_type = "private"
-  }]
 }
 
 variable "file_storage_list" {

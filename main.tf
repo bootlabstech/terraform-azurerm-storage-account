@@ -38,7 +38,7 @@ resource "azurerm_storage_container" "storage_container" {
   for_each              = { for storage in var.container_set : storage.name => storage }
   name                  = each.key
   storage_account_name  = azurerm_storage_account.assets.name
-  container_access_type = each.value.access_type
+  container_access_type = "private"
 }
 
 resource "azurerm_storage_queue" "queues" {
