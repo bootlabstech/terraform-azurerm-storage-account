@@ -27,12 +27,12 @@ variable "file_storage_list" {
 
 variable "queues_set" {
   description = "List of storages queues"
-  type        = list(object({ name = string}))
+  type        = list(object({ name = string }))
   default     = []
 }
 
 variable "tables_set" {
   description = "List of storage tables."
-  type        = list(object({ name = string}))
+  type        = list(object({ name = string }))
   default     = []
 }

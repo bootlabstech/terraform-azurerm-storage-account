@@ -1,6 +1,6 @@
 # Create a resource group
 data "azurerm_resource_group" "bootlab_rg" {
-  name     = var.group_name
+  name = var.group_name
 }
 resource "random_string" "storage_account_random_suffix" {
   length  = 8
