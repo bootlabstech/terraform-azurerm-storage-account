@@ -22,17 +22,15 @@ resource "azurerm_storage_account" "assets" {
 
   network_rules {
     default_action = "Deny"
-    bypass         = "AzureServices"
+    bypass         = ["AzureServices"]
   }
 
   blob_properties {
     delete_retention_policy {
-      enabled = true
       days    = 7
     }
 
     container_delete_retention_policy {
-      enabled = true
       days    = 7
     }
   }
