@@ -10,13 +10,14 @@ resource "random_string" "storage_account_random_suffix" {
 }
 
 resource "azurerm_storage_account" "assets" {
-  name                            = "${var.storage_account_name}${random_string.storage_account_random_suffix.id}"
-  resource_group_name             = data.azurerm_resource_group.bootlab_rg.name
-  location                        = data.azurerm_resource_group.bootlab_rg.location
-  account_tier                    = "Standard"
-  account_replication_type        = var.file_storage_account_replication_type
-  enable_https_traffic_only       = true
-  allow_nested_items_to_be_public = true
+  name                              = "${var.storage_account_name}${random_string.storage_account_random_suffix.id}"
+  resource_group_name               = data.azurerm_resource_group.bootlab_rg.name
+  location                          = data.azurerm_resource_group.bootlab_rg.location
+  account_tier                      = "Standard"
+  account_replication_type          = var.file_storage_account_replication_type
+  enable_https_traffic_only         = true
+  allow_nested_items_to_be_public   = true
+  infrastructure_encryption_enabled = true
 
   lifecycle {
     ignore_changes = [
