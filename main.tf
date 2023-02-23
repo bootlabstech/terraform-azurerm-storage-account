@@ -23,6 +23,7 @@ resource "azurerm_storage_account" "assets" {
 
   network_rules {
     default_action = "Deny"
+    ip_rules       = ["100.0.0.1"]
     bypass         = ["AzureServices"]
   }
 
