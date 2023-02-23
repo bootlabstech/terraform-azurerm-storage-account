@@ -18,7 +18,7 @@ resource "azurerm_storage_account" "assets" {
   account_replication_type          = var.file_storage_account_replication_type
   enable_https_traffic_only         = true
   allow_nested_items_to_be_public   = true
-  infrastructure_encryption_enabled = true
+  infrastructure_encryption_enabled = false
   shared_access_key_enabled         = true
 
   network_rules {
