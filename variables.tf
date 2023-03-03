@@ -1,37 +1,32 @@
-variable "group_name" {
+variable "name" {
   type        = string
   description = "The Name which should be used for this Resource Group. Changing this forces a new Resource Group to be created."
 }
 
-variable "storage_account_name" {
+variable "resource_group_name" {
   type        = string
   description = "name of the storage account"
 }
 
-variable "file_storage_account_replication_type" {
+variable "location" {
   type        = string
   description = "replication type of file storage, LRS in uat and GRS in prod"
 }
 
-variable "container_set" {
+variable "account_kind" {
   description = "List of containers to create and their access levels."
   type        = list(object({ name = string, access_type = string }))
 }
 
-variable "file_storage_list" {
+variable "account_tier" {
   description = "List of containers to create and their access levels."
   type        = list(object({ name = string, quota = number }))
   default     = []
 }
 
-variable "queues_set" {
+variable "storage_account_replication_type" {
   description = "List of storages queues"
   type        = list(object({ name = string }))
   default     = []
 }
 
-variable "tables_set" {
-  description = "List of storage tables."
-  type        = list(object({ name = string }))
-  default     = []
-}
