@@ -15,18 +15,18 @@ variable "location" {
 
 variable "account_kind" {
   description = "List of containers to create and their access levels."
-  type        = list(object({ name = string, access_type = string }))
+  type        = string
 }
 
 variable "account_tier" {
   description = "List of containers to create and their access levels."
-  type        = list(object({ name = string, quota = number }))
-  default     = []
+  type        = string
+
 }
 
 variable "storage_account_replication_type" {
   description = "List of storages queues"
-  type        = list(object({ name = string }))
-  default     = []
+  type        = string
+
 }
 
