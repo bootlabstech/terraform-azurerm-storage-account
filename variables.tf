@@ -29,4 +29,19 @@ variable "storage_account_replication_type" {
   type        = string
 
 }
+variable "type" {
+  description = "List of storages queues"
+  type        = string
+  default = "SystemAssigned"
+
+}
+
+
+
+
+
+
+
+
+
 
