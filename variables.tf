@@ -1,47 +1,60 @@
 variable "name" {
   type        = string
-  description = "The Name which should be used for this Resource Group. Changing this forces a new Resource Group to be created."
+  description = "value"
 }
-
 variable "resource_group_name" {
   type        = string
-  description = "name of the storage account"
+  description = "value"
 }
-
 variable "location" {
   type        = string
-  description = "replication type of file storage, LRS in uat and GRS in prod"
+  description = "value"
 }
-
 variable "account_kind" {
-  description = "List of containers to create and their access levels."
   type        = string
+  description = "value"
 }
-
 variable "account_tier" {
-  description = "List of containers to create and their access levels."
   type        = string
-
+  description = "value"
+  default     = "Premium"
 }
-
-variable "storage_account_replication_type" {
-  description = "List of storages queues"
+variable "account_replication_type" {
   type        = string
-
+  description = "value"
+}
+variable "min_tls_version" {
+  type        = string
+  description = "value"
+  default     = "TLS1_2"
+}
+variable "cross_tenant_replication_enabled" {
+  type        = bool
+  description = "value"
+  default     = true
+}
+variable "allow_nested_items_to_be_public" {
+  type        = bool
+  description = "value"
+  default     = true
+}
+variable "shared_access_key_enabled" {
+  type        = bool
+  description = "value"
+  default     = true
+}
+variable "public_network_access_enabled" {
+  type        = bool
+  description = "value"
+  default     = true
 }
 variable "type" {
-  description = "List of storages queues"
   type        = string
-  default = "SystemAssigned"
-
+  description = "value"
+  default     = "SystemAssigned"
 }
-
-
-
-
-
-
-
-
-
-
+# variable "versioning_enabled" {
+#   type        = bool
+#   description = "value"
+#   default     = false
+# }
