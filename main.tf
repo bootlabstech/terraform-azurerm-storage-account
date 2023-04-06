@@ -14,8 +14,7 @@ resource "azurerm_storage_account" "example" {
     type = var.type
   }
   network_rules {
-    default_action = "Deny"
-    ip_rules       = ["100.0.0.1"]
+    default_action = "Allow"
     bypass =  ["AzureServices" ]
   }
 #   blob_properties {
