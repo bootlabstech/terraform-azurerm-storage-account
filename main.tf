@@ -1,9 +1,10 @@
+# Creates a Storage account
 resource "azurerm_storage_account" "example" {
   name                                = var.name
   resource_group_name                 = var.resource_group_name
   location                            = var.location
-  account_tier                        = var.account_tier
   account_kind                        = var.account_kind
+  account_tier                        = var.account_tier
   account_replication_type            = var.account_replication_type
   cross_tenant_replication_enabled    = var.cross_tenant_replication_enabled
   access_tier                         = var.access_tier
@@ -24,24 +25,23 @@ resource "azurerm_storage_account" "example" {
   # sftp_enabled                        = var.sftp_enabled
 
 
-  dynamic "blob_properties" {
-    for_each = var.account_kind == "BlobStorage" ? [1] : []
-    content {
-      versioning_enabled = var.versioning_enabled
-      change_feed_enabled = var.change_feed_enabled
-      last_access_time_enabled = var.last_access_time_enabled
-      delete_retention_policy {
-        days = 7
-      }
-      container_delete_retention_policy {
-        days = 7
-      }
+  # dynamic "blob_properties" {
+  #   for_each = var.account_kind == "BlobStorage" ? [1] : []
+  #   content {
+  #     versioning_enabled = var.versioning_enabled
+  #     change_feed_enabled = var.change_feed_enabled
+  #     last_access_time_enabled = var.last_access_time_enabled
+  #     delete_retention_policy {
+  #       days = 7
+  #     }
+  #     container_delete_retention_policy {
+  #       days = 7
+  #     }
+
 
       
-    }
+  #   }}
 
   }
 
-
-
-}  
+ 
