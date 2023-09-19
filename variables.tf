@@ -13,45 +13,21 @@ variable "location" {
   description = " Specifies the supported Azure location where the resource exists."
 
 }
+variable "account_kind" {
+  description = "Defines the Kind of account. Valid options are BlobStorage, BlockBlobStorage, FileStorage, Storage and StorageV2. Defaults to StorageV2."
+  type        = string
+
+}
 variable "account_tier" {
   type        = string
   description = "Defines the Tier to use for this storage account. Valid options are Standard and Premium. For BlockBlobStorage and FileStorage accounts only Premium is valid. Changing this forces a new resource to be created"
   default     = "Standard"
 
 }
-variable "account_kind" {
-  description = "Defines the Kind of account. Valid options are BlobStorage, BlockBlobStorage, FileStorage, Storage and StorageV2. Defaults to StorageV2."
-  type        = string
-
-}
 variable "account_replication_type" {
   type        = string
   description = " Defines the type of replication to use for this storage account. Valid options are LRS, GRS, RAGRS, ZRS, GZRS and RAGZRS."
   default     = "LRS"
-
-}
-variable "cross_tenant_replication_enabled" {
-  type        = bool
-  description = " Should cross Tenant replication be enabled? Defaults to true."
-  default     = true
-
-}
-variable "access_tier" {
-  type        = string
-  description = "Defines the access tier for BlobStorage, FileStorage and StorageV2 accounts. Valid options are Hot and Cool, defaults to Hot."
-  default     = "Hot"
-
-}
-variable "enable_https_traffic_only" {
-  description = "Boolean flag which forces HTTPS if enabled, see here for more information. Defaults to true."
-  type        = bool
-  default     = true
-
-}
-variable "min_tls_version" {
-  type        = string
-  description = "valThe minimum supported TLS version for the storage account. Possible values are TLS1_0, TLS1_1, and TLS1_2. Defaults to TLS1_2 for new storage accounts.ue"
-  default     = "TLS1_2"
 
 }
 variable "allow_nested_items_to_be_public" {
@@ -66,69 +42,21 @@ variable "shared_access_key_enabled" {
   default     = true
 
 }
+variable "min_tls_version" {
+  type        = string
+  description = "valThe minimum supported TLS version for the storage account. Possible values are TLS1_0, TLS1_1, and TLS1_2. Defaults to TLS1_2 for new storage accounts.ue"
+  default     = "TLS1_2"
+
+}
+variable "access_tier" {
+  type        = string
+  description = "Defines the access tier for BlobStorage, FileStorage and StorageV2 accounts. Valid options are Hot and Cool, defaults to Hot."
+  default     = "Hot"
+
+}
 variable "public_network_access_enabled" {
   description = "Whether the public network access is enabled? Defaults to true."
   type        = bool
   default     = true
 
 }
-variable "default_to_oauth_authentication" {
-  description = " Default to Azure Active Directory authorization in the Azure portal when accessing the Storage Account. The default value is false"
-  type        = bool
-  default     = false
-
-}
-variable "queue_encryption_key_type" {
-  type        = string
-  description = "The encryption type of the queue service. Possible values are Service and Account. Changing this forces a new resource to be created. Default value is Service."
-  default     = "Service"
-
-}
-variable "table_encryption_key_type" {
-  type        = string
-  description = " The encryption type of the table service. Possible values are Service and Account. Changing this forces a new resource to be created. Default value is Service."
-  default     = "Service"
-
-}
-variable "infrastructure_encryption_enabled" {
-  description = "Is infrastructure encryption enabled? Changing this forces a new resource to be created. Defaults to false"
-  type        = bool
-  default     = false
-
-}
-# variable "edge_zone" {
-#   type        = string
-#   description = "value"
-
-# }
-# variable "is_hns_enabled" {
-#   description = "value"
-#   type        = bool
-#   default     = false
-
-# }
-# variable "nfsv3_enabled" {
-#   description = "value"
-#   type        = bool
-#   default     = false
-
-# }
-# variable "large_file_share_enabled" {
-#   description = "value"
-#   type        = bool
-#   default     = false
-
-# }
-# variable "allowed_copy_scope" {
-#   type        = string
-#   description = "value"
-#   default     = "AAD"
-
-# }
-# variable "sftp_enabled" {
-#   description = "value"
-#   type        = bool
-#   default     = false
-
-# }
-
