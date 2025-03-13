@@ -60,7 +60,7 @@ variable "public_network_access_enabled" {
   default     = true
 
 }
-variable "enable_https_traffic_only" {
+variable "is_hns_enabled" {
   type = bool
   default = false
   
