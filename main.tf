@@ -37,7 +37,10 @@ resource "azurerm_storage_account" "example" {
   lifecycle {
     ignore_changes = [
       tags,
-      custom_domain
+      custom_domain,
+      allow_nested_items_to_be_public,
+      public_network_access_enabled
+
     ]
   }
 
