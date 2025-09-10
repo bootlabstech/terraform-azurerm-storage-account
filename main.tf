@@ -16,6 +16,7 @@ resource "azurerm_storage_account" "example" {
   queue_encryption_key_type           = var.queue_encryption_key_type
   table_encryption_key_type           = var.table_encryption_key_type
   infrastructure_encryption_enabled   = var.infrastructure_encryption_enabled
+  is_hns_enabled = var.is_hns_enabled
   
   dynamic "blob_properties" {
     for_each = var.account_kind == "BlobStorage" ? [1] : []

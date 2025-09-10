@@ -116,3 +116,8 @@ variable "last_access_time_enabled" {
     default     = false
 
 }
+variable "is_hns_enabled" {
+  default = false
+  type = bool
+  
+}
