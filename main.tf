@@ -54,7 +54,7 @@ resource "azurerm_private_endpoint" "endpoint" {
 
   private_service_connection {
     name                           = "${var.name}-connection"
-    private_connection_resource_id = var.private_connection_resource_id
+    private_connection_resource_id = azurerm_storage_account.example.id
     is_manual_connection           = var.is_manual_connection
     subresource_names              = var.subresource_names
 
